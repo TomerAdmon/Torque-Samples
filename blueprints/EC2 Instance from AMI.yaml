@@ -2,7 +2,7 @@ spec_version: 2
 description: An AWS EC2 Instance (Virtual Machine), provisioned from a list of AWS built-in AMIs
 instructions:
   source:
-    store: Torque-Samples
+    store: jumpstart-kit
     path: instructions/EC2_Instance.md
 inputs:
   AWS Region:
@@ -46,7 +46,7 @@ grains:
         store: jumpstart-kit
         path: assets/terraform/aws/ec2_instance
       agent:
-        name: Sample-Agent
+        name: demo-dev
       inputs:
       - app_subnet_a_id: '{{ .grains.["Multi Subnet VPC"].outputs.app_subnet_a_id }}'
       - aws_region: '{{ .inputs.["AWS Region"] | split: "|" | last | strip }}'
