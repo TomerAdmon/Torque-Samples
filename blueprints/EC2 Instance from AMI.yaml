@@ -30,7 +30,7 @@ grains:
     kind: blueprint
     spec:
       source: 
-        store: Torque-Samples
+        store: jumpstart-kit
         path: blueprints
       inputs:
         - aws_region: '{{ .inputs.["AWS Region"] | split: "|" | last | strip }}'
@@ -43,7 +43,7 @@ grains:
     depends-on: Multi Subnet VPC
     spec:
       source:
-        store: Torque-Samples
+        store: jumpstart-kit
         path: assets/terraform/aws/ec2_instance
       agent:
         name: Sample-Agent
