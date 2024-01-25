@@ -2,7 +2,7 @@ spec_version: 2
 description: A single page HTML based Tetris game deployed as a static website on S3 using CFN and TF
 instructions:
   source:
-    store: Torque-Samples
+    store: jumpstart-kit
     path: instructions/Webgame.md
 inputs:
   Bucket Name:
