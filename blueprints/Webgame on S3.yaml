@@ -28,11 +28,11 @@ grains:
     kind: cloudformation
     spec: 
       source:
-        store: Torque-Samples
+        store: jumpstart-kit
         path: assets/cloudformation/AWSS3Bucket.yaml
       region: '{{ .inputs.["AWS Region"] | split: "|" | last | strip }}'
       agent:
-        name: Sample-Agent
+        name: demo-dev
       inputs:
       - AccessControl: '{{ .inputs.["Access Control"] }}'
       - BucketName: '{{ .inputs.["Bucket Name"] }}-{{ envid | downcase }}'
@@ -44,10 +44,10 @@ grains:
     depends-on: S3-Bucket
     spec:
       source:
-        store: Torque-Samples
+        store: jumpstart-kit
         path: assets/terraform/aws/s3-upload-webapp
       agent:
-        name: Sample-Agent
+        name: demo-dev
       inputs:
       - bucket_name: '{{ .inputs.["Bucket Name"] }}-{{ envid | downcase }}'
       - region: '{{ .inputs.["AWS Region"] | split: "|" | last | strip }}'
@@ -58,7 +58,7 @@ grains:
     depends-on: S3 Webapp Upload
     spec:
       agent:
-        name: Sample-Agent
+        name: demo-dev
       activities:
         deploy:
           commands:
