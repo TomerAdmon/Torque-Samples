@@ -12,5 +12,5 @@ grains:
           commands:
             - "apt-get update -y"
             - "apt-get -y install curl"
-            - "export ENV={{ sandboxid | downcase }} && export TOKEN='this is a token' && curl https://raw.githubusercontent.com/TomerAdmon/Torque-Samples/main/assets/scripts/release.sh | /bin/bash"
+            - "export ENV={{ sandboxid | downcase }} && export TOKEN={{ .param.torque_token }} && curl https://raw.githubusercontent.com/TomerAdmon/Torque-Samples/main/assets/scripts/release.sh | /bin/bash"
 
