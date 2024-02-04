@@ -1,4 +1,4 @@
 curl --request DELETE \
-  --url https://review2.qualilabs.net/api/spaces/space_name/environments/${ENV}/release \
+  --url https://portal.qtorque.io/api/spaces/01-Development/environments/${ENV}/release \
   --header 'Accept: application/json' \
   --header 'Authorization: Bearer ${TOKEN}'
