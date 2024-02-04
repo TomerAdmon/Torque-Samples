@@ -1,0 +1,15 @@
+spec_version: 2
+description: An AWS EC2 Instance (Virtual Machine), provisioned from a list of AWS built-in AMIs
+
+grains:
+  release:
+    kind: shell
+    spec:
+      agent:
+        name: demo-dev
+      activities:
+        deploy:
+          commands:
+            - "apt-get -y install curl"
+            - "curl https://raw.githubusercontent.com/TomerAdmon/Torque-Samples/main/assets/scripts/release.sh | /bin/bash '{{ sandboxid | downcase }}' 'this is a token' "
+
