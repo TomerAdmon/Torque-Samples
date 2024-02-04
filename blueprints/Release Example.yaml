@@ -11,6 +11,6 @@ grains:
         deploy:
           commands:
             - "apt-get -y install curl"
-            - "curl https://raw.githubusercontent.com/TomerAdmon/Torque-Samples/main/assets/scripts/release.sh |
-            - "sh release.sh '{{ sandboxid | downcase }}' 'this is a token' "
+            - "curl https://raw.githubusercontent.com/TomerAdmon/Torque-Samples/main/assets/scripts/release.sh"
+            - "sh release.sh '{{ sandboxid | downcase }}' 'this is a token'"
 
